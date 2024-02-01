@@ -47,7 +47,13 @@ e.g. `docker run -v /opt/datadir/volume_to_be_mounted:/var/lib/mysql mysql`
 `docker inspect <container name>` for finding info on a container.
 
 
+
+
 `docker log <container name>` for logs
 
+
+
+`kubectl get pods`
+`kubectl describe pods <pod name>`
 
 
