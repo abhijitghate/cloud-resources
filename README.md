@@ -54,12 +54,20 @@ e.g. `docker run -v /opt/datadir/volume_to_be_mounted:/var/lib/mysql mysql`
 
 
 `kubectl get pods`
+
 `kubectl describe pods <pod name>`
+
 `kubectl create -f <yaml file to create pods with>`
+
 `kubectl get replicaset`
+
 `kubectl delete replicaset <name of the replicaset, myapp-replicaset>` also delees all the underlying pods
+
 `kubectl replace -f <yaml file for replicaset>` -> in the event of updating the number of replicas etc
+
 `kubectl scale replicas=6 -f replicaset-definition.yaml` --> to update the number of replicas via command line. This won't change the value of replicas in the definition file.
+
+In case of replica set, we always need to provide the `template` part in `spec`. We need to do it in order to allow the creating of a new pod in the event of failure of it. 
 ### ----
 
 `kubectl run <name of the pod> --image=<image name> --dry-run=client -o yaml` --> outputs a yaml file (thanks to `-o` flag in `yaml` format which can be used to edit and create new `yaml` file for creation of new pods.  
