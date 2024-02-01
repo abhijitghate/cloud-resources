@@ -57,7 +57,9 @@ e.g. `docker run -v /opt/datadir/volume_to_be_mounted:/var/lib/mysql mysql`
 `kubectl describe pods <pod name>`
 `kubectl create -f <yaml file to create pods with>`
 `kubectl get replicaset`
-
+`kubectl delete replicaset <name of the replicaset, myapp-replicaset>` also delees all the underlying pods
+`kubectl replace -f <yaml file for replicaset>` -> in the event of updating the number of replicas etc
+`kubectl scale replicas=6 -f replicaset-definition.yaml` --> to update the number of replicas via command line. This won't change the value of replicas in the definition file.
 ### ----
 
 `kubectl run <name of the pod> --image=<image name> --dry-run=client -o yaml` --> outputs a yaml file (thanks to `-o` flag in `yaml` format which can be used to edit and create new `yaml` file for creation of new pods.  
@@ -65,3 +67,6 @@ e.g. `docker run -v /opt/datadir/volume_to_be_mounted:/var/lib/mysql mysql`
 ### ----
 
 Replication controllers are used to ensure high availability. We can use replication controller even if we are running a single container. It also helps in load balancing and scaling. Although, it is an older way of habdling these issues. The newer way to do it is Replica Set.
+
+
+
