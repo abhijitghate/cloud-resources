@@ -56,7 +56,7 @@ e.g. `docker run -v /opt/datadir/volume_to_be_mounted:/var/lib/mysql mysql`
 `kubectl get pods`
 `kubectl describe pods <pod name>`
 
-## IMPORTAMT
+### IMPORTANT
 
 `kubectl run <name of the pod> --image=<image name> --dry-run=client -o yaml` --> outputs a yaml file (thanks to `-o` flag in `yaml` format which can be used to edit and create new `yaml` file for creation of new pods.  
 
