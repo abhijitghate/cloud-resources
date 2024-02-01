@@ -55,9 +55,13 @@ e.g. `docker run -v /opt/datadir/volume_to_be_mounted:/var/lib/mysql mysql`
 
 `kubectl get pods`
 `kubectl describe pods <pod name>`
+`kubectl create -f <yaml file to create pods with>`
+`kubectl get replicaset`
 
-### IMPORTANT
+### ----
 
 `kubectl run <name of the pod> --image=<image name> --dry-run=client -o yaml` --> outputs a yaml file (thanks to `-o` flag in `yaml` format which can be used to edit and create new `yaml` file for creation of new pods.  
 
+### ----
 
+Replication controllers are used to ensure high availability. We can use replication controller even if we are running a single container. It also helps in load balancing and scaling. Although, it is an older way of habdling these issues. The newer way to do it is Replica Set.
